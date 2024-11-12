@@ -71,8 +71,15 @@
 
 /* Imagen de Fondo del sitio*/
 
+/* body {
+    background: linear-gradient(to left, #72dcff, white); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
 body {
-    background: linear-gradient(to left, #72dcff, white); /* Degradado de celeste a blanco de derecha a izquierda */
+    background-image: url('/assets/img/BG-ffflux.svg'); /* Agregar una imagen para el fondo del sitio */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
