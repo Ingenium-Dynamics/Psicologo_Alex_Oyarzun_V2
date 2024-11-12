@@ -1,0 +1,206 @@
+
+
+        /* Servicios styling */
+        .service-card {
+            border: none;
+            background-color: #f8f9fa;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #adb5bd;
+        }
+
+    #Texto_Quien_Soy {
+        background: rgba(255, 255, 255, 0.6); /* Fondo semitransparente para el texto */
+        padding: 20px;
+        border-radius: 10px;
+        filter: drop-shadow(10px 20px 30px rgba(0, 0, 0, 0.3));
+        }
+
+    #img_quiensoy {
+        filter: drop-shadow(10px 20px 30px rgba(0, 0, 0, 0.7));
+    }
+
+
+#img_carrousel_quiensoy{
+    max-height: fit-content;
+}
+/*---------------------------------------------------*/
+/* Logo del navbar */
+.navbar-logo img {
+    height: 38px; /* Ajusta este valor según el tamaño deseado */
+    width: auto;
+    object-fit: cover;
+}
+
+.diphylleia-regular {
+    font-family: "Diphylleia", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-brand {
+    color: #ffffff; /* color del texto */
+}
+
+/* Estilo para el navbar */
+
+#navbarNav .nav-item .nav-link {
+    text-align: right;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi transparente de tono oscuro */
+}
+
+/* Imagen de Fondo del sitio*/
+
+body {
+    background: linear-gradient(to left, #72dcff, white); /* Degradado de celeste a blanco de derecha a izquierda */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 50px;
+    padding: 10px 15px;
+    font-size: 20px;
+  }
+  
+/* Agregar padding-top a la clase rrss-quien-soy */
+.rrss-quien-soy {
+    padding-top: 20px; /* Ajusta el valor según sea necesario */
+}
+
+/*Texto de hero section*/
+.carousel-item {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel-item.active img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } /*
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }*/
+  .hero {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-image-container {
+    width: 100%;
+    height: 100vh; /* Esto hace que el carousel ocupe el 100% del viewport height */
+    position: relative;
+}
+
+.carousel-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse */
+    object-position: center;
+}
+
+/* Media query para ajustar la altura en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .carousel-image-container {
+        height: 50vh; /* Altura más pequeña para móviles */
+    }
+}
+
+/* Media query para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .carousel-image-container {
+        height: 75vh;
+    }
+}
+
+  /*----------------------*/
+  /*cards de tratamientos*/
+
+ #card_tratamiento {
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 190px;
+    height: 100px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #e3e4e4, #81fdfd);
+    box-shadow:  19px 19px 38px #ffffff,
+             -19px -19px 38px #478aee;
+  }
+
+#text_tratamiento_cards{
+    max-width:fit-content;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 1%;
+    padding-top:1%;
+    font-family: 'Overlock', sans-serif;
+    font-weight: bold;
+        }
+
+/*------------------------------*/
+
+#terapias h2 {
+    padding-bottom: 5%;
+}
+
+/* Efecto de sombra para el iframe de IG */
+.content iframe {
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.7); 
+}
+
+#SpotifyIframe {
+    filter: drop-shadow(10px 20px 30px rgba(0, 0, 0, 0.7));
+    padding-top: 25%;
+}
+
+#titulo_quiensoy {
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+/* Estilo para las imágenes en la sección "Quién Soy" */
+.quienes-soy img {
+    max-width: 75%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Hace que la imagen se comporte como bloque */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Agrega sombra a la imagen */
+}
