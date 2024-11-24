@@ -212,3 +212,72 @@ body {
   margin-right: auto; /* Centra horizontalmente */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Agrega sombra a la imagen */
 }
+/* Estilos para el navbar hamburguesa*/
+/* Estilos para el navbar siempre colapsado */
+.navbar-collapse {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 0 0 10px 10px;
+  margin-top: 0.5rem;
+}
+
+#navbarNav .nav-item .nav-link {
+  text-align: center; /* Cambiado de right a center */
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#navbarNav .nav-item:last-child .nav-link {
+  border-bottom: none;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/*------------------------*/
+/*TEMA DE INTERES*/
+
+.instagram-video {
+  width: 100%;
+  height: 800px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.list-group-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .instagram-video {
+    height: 400px;
+  }
+
+  .list-group {
+    margin-bottom: 20px;
+  }
+}
+
+/* Sombra para el menú de videos */
+.list-group {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
