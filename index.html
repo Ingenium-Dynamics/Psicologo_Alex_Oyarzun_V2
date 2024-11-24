@@ -350,7 +350,7 @@
           <div class="col-md-4">
             <div class="list-group" id="video-list" role="tablist">
               <a
-                class="list-group-item list-group-item-action active"
+                class="list-group-item list-group-item-action"
                 data-video-src="https://www.instagram.com/p/CyUTSyEOJ1t/embed"
                 role="button"
               >
@@ -410,7 +410,6 @@
                 frameborder="0"
                 scrolling="no"
                 allowtransparency="true"
-                style="height: 100vh; width: 100%"
               ></iframe>
             </div>
           </div>
@@ -425,7 +424,8 @@
       videoLinks.forEach((link) => {
         link.addEventListener("click", function () {
           const videoSrc = this.getAttribute("data-video-src");
-          videoContainer.innerHTML = `<iframe class="instagram-video" src="${videoSrc}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>`;
+          // Cambiar el contenido del iframe
+          videoContainer.innerHTML = `<iframe class="instagram-video" src="${videoSrc}?autoplay=1" frameborder="0" scrolling="no" allowtransparency="true"></iframe>`;
         });
       });
     </script>
