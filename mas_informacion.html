@@ -35,7 +35,7 @@
   </head>
   <body>
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-dark fixed-top">
       <div class="container">
         <div class="navbar-logo">
           <a href="#"
@@ -67,7 +67,12 @@
               <a class="nav-link" href="index.html#quien-soy">Quién Soy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#terapias">Terapias</a>
+              <a class="nav-link" href="index.html#temas_interes"
+                >Temas de Interés</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#tratamientos">Terapias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html#otros">Otros Servicios</a>
@@ -93,51 +98,86 @@
     <!-- Sección de Agendar Cita -->
     <section class="py-5 bg-light" id="agendar-cita">
       <div class="container">
-        <h2 class="text-center mb-4">Agenda Tu Cita Hoy</h2>
-        <p class="text-center text-muted mb-5">
-          Es el primer paso hacia una mejor salud mental y emocional.
+        <h2 class="text-center mb-4 pt-5">Más Información</h2>
+        
+          <!-- Es el primer paso hacia una mejor salud mental y emocional. -->
         </p>
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h4 class="mb-3">
-              ¿Cómo agendar una cita con el Psicólogo Alex Oyarzún?
-            </h4>
-            <!-- <p class="lead">Sigue estos pasos y comienza tu proceso de transformación personal:</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><strong>1. Completa el formulario:</strong> Ingresa tus datos y preferencias en nuestro <a href="#contacto" class="text-decoration-underline">formulario de contacto</a>.</li>
-                        <li class="mb-2"><strong>2. Elige tu tipo de terapia:</strong> Terapia individual, de pareja o familiar. Elige la fecha que mejor te acomode.</li>
-                        <li class="mb-2"><strong>3. Confirmación de cita:</strong> Te contactaremos para confirmar todos los detalles de tu sesión.</li>
-                        <li class="mb-2"><strong>4. Recordatorio automático:</strong> Recibirás un recordatorio el día anterior a tu cita para que no te pierdas ningún detalle.</li>
-                    </ul> -->
-            <p class="mt-4">
-              ¿Prefieres hablar directamente? <br />
-              Llámanos al
-              <strong
-                ><a href="tel:+56976106183" class="text-primary"
-                  >+569 7610 6183</a
-                ></strong
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
               >
-              o envíanos un correo a
-              <strong
-                ><a href="mailto:info@alexoyarzun.cl" class="text-primary"
-                  >alex@gmail.com</a
-                ></strong
-              >.
-            </p>
+                ¿Cómo agendar una cita con el Psicólogo Alex Oyarzún?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                <p class="text-center text-muted mb-5">
+                Es el primer paso hacia una mejor salud mental y emocional.</p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <strong>1. Whatsapp :</strong> Contáctanos directamente a través de 
+                    <a href="https://wa.me/56994791916" class="text-decoration-underline">WhatsApp</a>.
+                  <li class="mb-2">
+                    <strong>2. Llamada por teléfono:</strong> Te invito a llamarme al <b>+56 9 94791916</b> para agendar tu cita.
+                  </li>
+                  <li class="mb-2">
+                    <strong>3. Formulario de contacto:</strong> Puedes acceder al 
+                    <a href="index.html#contacto" class="text-decoration-underline">formulario de contacto</a> para que te contactemos y confirmemos todos los detalles de tu sesión.
+                  </li>
+                  <li class="mb-2">
+                    <strong>4. Correo electrónico:</strong> Si deseas más información, no dudes en escribirme a <a href="mailto:alexoyarzuntrujillo@gmail.com" class="text-decoration-underline">alexoyarzuntrujillo@gmail.com</a>.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="col-md-6">
-            <img
-              src="https://picsum.photos/id/237/200"
-              class="img-fluid rounded shadow"
-              alt="Agendar Cita"
-            />
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Valores
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><strong>1. Atención Fonasa:</strong> $13.000 CLP aproximadamente el valor del bono</li>
+                  <li class="mb-2"><strong>2. Particular:</strong> $40.000 CLP</li>
+                  <li class="mb-2"><strong>3. Consulta internacional (fuera de Chile):</strong> $45 USD (<a href="https://www.paypal.com" target="_blank" class="text-decoration-underline">PayPal</a>)</li>
+                  <li class="mb-2"><strong>4. Precios para Empresas:</strong> Valor a convenir; por favor, consulte para más información.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Sección de Atención a Empresas -->
-    <section class="py-5" id="atencion-empresas">
+    <!-- <section class="py-5" id="atencion-empresas">
       <div class="container">
         <h2 class="text-center mb-4">Atención Psicológica para Empresas</h2>
         <p class="text-center text-muted mb-5">
@@ -169,7 +209,7 @@
               </li>
               <li class="mb-2">
                 <strong>4. Consultoría en salud mental organizacional:</strong>
-                Asesoría estratégica para crear un entorno laboral saludable y
+                Asesoría estratgica para crear un entorno laboral saludable y
                 productivo.
               </li>
             </ul>
@@ -186,7 +226,7 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section id="include-footer"></section>
