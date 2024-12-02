@@ -281,3 +281,35 @@ body {
 .list-group {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+
+/* Auto Cuidado Equipos*/
+
+#seccion-autocuidado {
+  background-color: rgba(9, 255, 247, 0);
+}
+
+#seccion-autocuidado .contenedor-principal {
+  transition: all 0.3s ease;
+}
+
+#seccion-autocuidado .contenedor-principal:hover {
+  transform: translateY(-5px);
+  box-shadow: 15px 25px 40px rgba(0,0,0,0.7) !important;
+}
+
+#seccion-autocuidado .imagen-seccion {
+  transition: transform 0.3s ease;
+}
+
+#seccion-autocuidado .imagen-seccion:hover {
+  transform: scale(1.05);
+}
+
+/* Ajustes de responsividad adicionales */
+@media (max-width: 768px) {
+  #seccion-autocuidado .contenedor-principal {
+      flex-direction: column;
+  }
+}
