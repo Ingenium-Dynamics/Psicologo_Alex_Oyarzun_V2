@@ -105,32 +105,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html"
-                >Inicio</a
-              >
+              <a class="nav-link" aria-current="page" href="index.html" data-bs-toggle="collapse" data-bs-target="#navbarNav">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#quien-soy">Quién Soy</a>
+              <a class="nav-link" href="#quien-soy" data-bs-toggle="collapse" data-bs-target="#navbarNav">Quién Soy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#temas_interes">Temas de Interés</a>
+              <a class="nav-link" href="#temas_interes" data-bs-toggle="collapse" data-bs-target="#navbarNav">Temas de Interés</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#tratamientos">Tratamientos</a>
+              <a class="nav-link" href="#tratamientos" data-bs-toggle="collapse" data-bs-target="#navbarNav">Tratamientos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#otros">Otros Servicios</a>
+              <a class="nav-link" href="#otros" data-bs-toggle="collapse" data-bs-target="#navbarNav">Otros Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#autocuidado-section">Auto Cuidado Equipos</a>
+              <a class="nav-link" href="#autocuidado-section" data-bs-toggle="collapse" data-bs-target="#navbarNav">Auto Cuidado Equipos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="mas_informacion.html"
-                >Más Información</a
-              >
+              <a class="nav-link" href="mas_informacion.html">Más Información</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contacto">Contacto</a>
+              <a class="nav-link" href="#contacto" data-bs-toggle="collapse" data-bs-target="#navbarNav">Contacto</a>
             </li>
           </ul>
         </div>
@@ -788,3 +784,26 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') !== '#') {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            setTimeout(() => {
+              targetElement.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }, 350); // Pequeño retraso para permitir que el menú se colapse primero
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
