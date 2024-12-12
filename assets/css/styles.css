@@ -352,3 +352,11 @@ h2 {
     font-size: 35px; 
 }
 
+.form-background {
+  background: rgba(255, 255, 255, 0.8); /* Fondo semi transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra */
+  margin-bottom: 20px; /* Espacio debajo del cuadro */
+}
+
