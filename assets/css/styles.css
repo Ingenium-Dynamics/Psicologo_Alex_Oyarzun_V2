@@ -362,8 +362,9 @@ h2 {
 }
 
 .glass-container{
-  width: 640px;
-  height: 400px;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
   color: white;
   display: flex;
   justify-content: center;
@@ -380,7 +381,18 @@ h2 {
 
 .glass-container ul {
   font-family: 'Diphylleia', sans-serif; 
-  /* font-weight: bold; */
-  font-size: 1.4em; /* Aumentar tamaño de letra */
-  line-height: 2.0; /* Aumentar interlineado */
+  font-size: 1.4em; 
+  line-height: 2.0; 
+}
+
+
+@media (max-width: 768px) {
+  .glass-container {
+    flex-direction: column; 
+    padding: 10px; 
+  }
+
+  .glass-container ul {
+    font-size: 1.2em; 
+  }
 }
