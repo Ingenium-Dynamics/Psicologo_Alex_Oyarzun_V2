@@ -131,6 +131,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  margin-top: 62px;
 }
 
 .hero .container-fluid {
@@ -360,3 +361,26 @@ h2 {
   margin-bottom: 20px; /* Espacio debajo del cuadro */
 }
 
+.glass-container{
+  width: 640px;
+  height: 400px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+  border: 10px rgba(255,255,255,0.4) solid;
+  border-bottom: 10px rgba(40,40,40,0.35) solid;
+  border-right: 10px rgba(40,40,40,0.35) solid;  
+}
+
+.glass-container ul {
+  font-family: 'Diphylleia', sans-serif; 
+  /* font-weight: bold; */
+  font-size: 1.4em; /* Aumentar tamaño de letra */
+  line-height: 2.0; /* Aumentar interlineado */
+}
