@@ -24,6 +24,61 @@ footer a:hover {
   color: #adb5bd;
 }
 
+.social-media-section {
+  background-color: rgba(248, 249, 250, 0.8);
+  padding: 25px 0;
+}
+
+.social-icon-container {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.social-icon-container:hover {
+  transform: scale(1.1);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  text-decoration: none;
+  color: #007bff;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.social-link i {
+  font-size: 2.5rem;
+}
+
+.social-platform {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Unique colors for each platform */
+.instagram { color: #E1306C; }
+.facebook { color: #3b5998; }
+.spotify { color: #1DB954; }
+.youtube { color: #FF0000; }
+.tiktok { color: #000000; }
+
+
+
+/*========================================================================*/
+
+
 #Texto_Quien_Soy {
   background: rgba(
     255,
