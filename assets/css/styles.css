@@ -73,6 +73,7 @@ footer a:hover {
 .spotify { color: #1DB954; }
 .youtube { color: #FF0000; }
 .tiktok { color: #000000; }
+.linkedin { color: #0435f9; }
 
 
 
@@ -159,7 +160,7 @@ body {
 /*Texto de hero section*/
 .carousel-item {
   height: 100vh;
-  width: 100%;
+  width: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
