@@ -1,4 +1,4 @@
-/* Servicios styling */
+/* servicios styling */
 .service-card {
   border: none;
   background-color: #f8f9fa;
@@ -67,7 +67,7 @@ footer a:hover {
   color: #495057;
 }
 
-/* Unique colors for each platform */
+/* Uniqe colors for each platform */
 .instagram { color: #E1306C; }
 .facebook { color: #3b5998; }
 .spotify { color: #1DB954; }
@@ -86,7 +86,7 @@ footer a:hover {
     255,
     255,
     0.6
-  ); /* Fondo semitransparente para el texto */
+  ); 
   padding: 20px;
   border-radius: 10px;
   filter: drop-shadow(10px 20px 30px rgba(0, 0, 0, 0.3));
@@ -102,7 +102,7 @@ footer a:hover {
 /*---------------------------------------------------*/
 /* Logo del navbar */
 .navbar-logo img {
-  height: 38px; /* Ajusta este valor según el tamaño deseado */
+  height: 38px; 
   width: auto;
   object-fit: cover;
 }
@@ -114,7 +114,7 @@ footer a:hover {
 }
 
 .navbar-brand {
-  color: #ffffff; /* color del texto */
+  color: #ffffff; 
 }
 
 /* Estilo para el navbar */
@@ -124,17 +124,10 @@ footer a:hover {
 }
 
 .navbar {
-  background: rgba(0, 0, 0, 0.7); /* Fondo semi transparente de tono oscuro */
+  background: rgba(0, 0, 0, 0.7); 
 }
 
 /* Imagen de Fondo del sitio*/
-
-/* body {
-    background: linear-gradient(to left, #72dcff, white); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
 
 body {
   background-image: url("../img/BG-ffflux.svg");
@@ -154,7 +147,7 @@ body {
 
 /* Agregar padding-top a la clase rrss-quien-soy */
 .rrss-quien-soy {
-  padding-top: 20px; /* Ajusta el valor según sea necesario */
+  padding-top: 20px;
 }
 
 /*Texto de hero section*/
@@ -177,12 +170,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-} /*
-  .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-  }*/
+} 
+
 .hero {
   width: 100%;
   height: 100vh;
@@ -245,29 +234,6 @@ body {
   }
 }
 
-/*----------------------*/
-/*cards de tratamientos*/
-
-#card_tratamiento {
-  margin-left: 2%;
-  margin-right: 2%;
-  width: 190px;
-  height: 100px;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #e3e4e4, #81fdfd);
-  box-shadow: 19px 19px 38px #ffffff, -19px -19px 38px #478aee;
-}
-
-#text_tratamiento_cards {
-  max-width: fit-content;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom: 1%;
-  padding-top: 1%;
-  font-family: "Overlock", sans-serif;
-  font-weight: bold;
-}
-
 /*------------------------------*/
 
 #terapias h2 {
@@ -291,12 +257,12 @@ body {
 
 /* Estilo para las imágenes en la sección "Quién Soy" */
 .quienes-soy img {
-  max-width: 75%; /* Asegura que la imagen no exceda el ancho de su contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  display: block; /* Hace que la imagen se comporte como bloque */
-  margin-left: auto; /* Centra horizontalmente */
-  margin-right: auto; /* Centra horizontalmente */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Agrega sombra a la imagen */
+  max-width: 75%; 
+  height: auto; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
 /* Estilos para el navbar hamburguesa*/
 /* Estilos para el navbar siempre colapsado */
@@ -308,7 +274,7 @@ body {
 }
 
 #navbarNav .nav-item .nav-link {
-  text-align: center; /* Cambiado de right a center */
+  text-align: center; 
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -413,11 +379,11 @@ h2 {
 }
 
 .form-background {
-  background: rgba(255, 255, 255, 0.8); /* Fondo semi transparente */
-  border-radius: 15px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra */
-  margin-bottom: 20px; /* Espacio debajo del cuadro */
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px; 
+  padding: 20px; 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); 
+  margin-bottom: 20px; 
 }
 
 .glass-container{
