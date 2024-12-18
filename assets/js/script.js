@@ -1,112 +1,101 @@
-// Configuración de AWS
-const REGION = "us-east-1";
-const IDENTITY_POOL_ID = "us-east-1:2778c396-48cc-48d6-b58b-5f66f0f23e90";
-const SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:183295419448:ContactForm-Psicologo-Alex-Oyarzun";
-
-// Configurar AWS SDK
-AWS.config.region = REGION;
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: IDENTITY_POOL_ID
-});
-
-// Crear el cliente SNS
-const sns = new AWS.SNS();
-
-// Función para enviar el mensaje a SNS
-function sendMessageToSNS(name, email, fono, message) {
-    const params = {
-        Message: `Nuevo mensaje de contacto:\nNombre: ${name}\nEmail: ${email}\nFono: ${fono}\nMensaje: ${message}`,
-        TopicArn: SNS_TOPIC_ARN
-    };
-
-    return new Promise((resolve, reject) => {
-        sns.publish(params, function(err, data) {
-            if (err) {
-                console.error("Error al enviar el mensaje:", err);
-                reject(err);
-            } else {
-                console.log("Mensaje enviado con éxito:", data.MessageId);
-                resolve(data);
-            }
-        });
-    });
-}
-
-// Función para validar el formulario
-function validateForm(name, email, fono, message) {
-    if (!name || !fono || !message) {
-        showMessage("Por favor, rellena todos los campos.", "error");
-        return false;
-    }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-        showMessage("Por favor, introduce un email válido.", "error");
-        return false;
-    }
-    return true;
-}
-
-// Función para mostrar mensajes
-function showMessage(text, type) {
-    const alertMsg = document.querySelector('.alert-msg');
-    alertMsg.textContent = text;
-    alertMsg.className = 'alert-msg mt-3 alert ' + (type === 'error' ? 'alert-danger' : 'alert-success');
-    alertMsg.style.display = 'block';
-}
-
-// Implementar rate limiting
-const RATE_LIMIT = 3; // Número máximo de envíos permitidos
-const TIME_WINDOW = 3600000; // Ventana de tiempo en milisegundos (1 hora)
-
-function checkRateLimit() {
-    const now = Date.now();
-    let rateData = JSON.parse(localStorage.getItem('rateLimitData')) || { count: 0, timestamp: now };
-
-    if (now - rateData.timestamp > TIME_WINDOW) {
-        rateData = { count: 0, timestamp: now };
-    }
-
-    if (rateData.count >= RATE_LIMIT) {
-        showMessage("Has excedido el límite de envíos. Por favor, inténtalo más tarde.", "error");
-        return false;
-    }
-
-    rateData.count++;
-    localStorage.setItem('rateLimitData', JSON.stringify(rateData));
-    return true;
-}
-
-// Manejar el envío del formulario
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('myForm'); //ojo cqui con el ID del form
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        if (!checkRateLimit()) {
-            return;
-        }
-
-        const name = this.querySelector('input[name="name"]').value.trim();
-        const email = this.querySelector('input[name="email"]').value.trim();
-        const fono = this.querySelector('input[name="phone"]').value.trim();
-        const message = this.querySelector('textarea[name="message"]').value.trim();
-
-        if (!validateForm(name, email, fono, message)) {
-            return;
-        }
-
+    const form = document.getElementById('myForm');
+    
+    // Remove any existing event listeners to prevent multiple bindings
+    const oldForm = form.cloneNode(true);
+    form.parentNode.replaceChild(oldForm, form);
+    
+    oldForm.addEventListener('submit', function(event) {
+        // Prevent the default form submission and stop propagation
+        event.preventDefault();
+        event.stopPropagation();
+        
+        // Disable the submit button immediately to prevent multiple clicks
         const submitButton = this.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.textContent = 'Enviando...';
 
-        try {
-            await sendMessageToSNS(name, email, fono, message);
-            showMessage("Tu mensaje ha sido enviado con éxito. Gracias!", "success");
-            this.reset();
-        } catch (error) {
-            showMessage("Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.", "error");
-        } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = 'Enviar';
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Basic form validation
+        if (!name || !email || !phone || !message) {
+            showMessage('Por favor complete todos los campos', 'error');
+            resetSubmitButton(submitButton);
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Por favor ingrese un correo electrónico válido', 'error');
+            resetSubmitButton(submitButton);
+            return;
+        }
+
+        // AWS SNS message sending
+        const params = {
+            Message: `Nuevo mensaje de contacto:\n\n` +
+                     `Nombre: ${name}\n` +
+                     `Email: ${email}\n` +
+                     `Teléfono: ${phone}\n` +
+                     `Mensaje: ${message}`,
+            TopicArn: "arn:aws:sns:us-east-1:183295419448:ContactForm-Psicologo-Alex-Oyarzun"
+        };
+
+        // Initialize AWS credentials
+        AWS.config.region = 'us-east-1';
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            IdentityPoolId: 'us-east-1:2778c396-48cc-48d6-b58b-5f66f0f23e90'
+        });
+
+        // Create SNS service object
+        const sns = new AWS.SNS();
+
+        // Flag to track submission status
+        let isSubmitting = false;
+
+        // Publish message to SNS
+        if (!isSubmitting) {
+            isSubmitting = true;
+            sns.publish(params, function(err, data) {
+                // Reset submission flag
+                isSubmitting = false;
+
+                if (err) {
+                    console.error('Error enviando mensaje:', err);
+                    showMessage('Hubo un error al enviar el mensaje. Inténtelo de nuevo.', 'error');
+                    resetSubmitButton(submitButton);
+                } else {
+                    showMessage('¡Mensaje enviado exitosamente!', 'success');
+                    oldForm.reset(); // Clear form fields
+                    resetSubmitButton(submitButton);
+                }
+            });
         }
     });
+
+    // Function to show messages
+    function showMessage(message, type) {
+        // Remove any existing alerts
+        const existingAlerts = document.querySelectorAll('.alert');
+        existingAlerts.forEach(alert => alert.remove());
+
+        // Create new alert
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type === 'error' ? 'danger' : 'success'} mt-3`;
+        alertDiv.textContent = message;
+
+        // Insert alert before the form
+        oldForm.insertAdjacentElement('beforebegin', alertDiv);
+    }
+
+    // Function to reset submit button
+    function resetSubmitButton(button) {
+        button.disabled = false;
+        button.textContent = 'Enviar';
+    }
 });
