@@ -75,10 +75,38 @@ footer a:hover {
 .tiktok { color: #000000; }
 .linkedin { color: #0435f9; }
 
-
-
+/*************************************/
+.temas_interes{
+  border: 1px solid #007bff;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+.tratamientos{
+  border: 1px solid #007bff;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+.otros_servicios{
+  border: 1px solid #007bff;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+.autocuidado-section{
+  border: 1px solid #007bff;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+.contacto-section{
+  border: 1px solid #007bff;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+}
 /*========================================================================*/
-
 
 #Texto_Quien_Soy {
   background: rgba(
@@ -366,6 +394,12 @@ body {
   }
 }
 
+h1{
+  font-family: 'Diphylleia', sans-serif; 
+  font-weight: bold;
+  font-size: 25px;   
+}
+
 h5 {
     font-family: 'Diphylleia', sans-serif; 
     font-weight: bold;
@@ -377,7 +411,9 @@ h2 {
     font-weight: bold;
     font-size: 35px; 
 }
-
+span{
+  color: #000000
+}
 .form-background {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 15px; 
