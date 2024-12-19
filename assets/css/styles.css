@@ -533,3 +533,15 @@ span {
   max-width: 550px;
   margin: auto;
 }
+
+/*WHATSAPP FLOTANTE*/
+#whatsapp-btn {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#whatsapp-btn.active {
+  background-color: #ffffff !important;
+  color: #25d366 !important;
+  border: 1px solid #25d366 !important;
+  opacity: 70%;
+}
