@@ -274,13 +274,8 @@
               </div>
             </div>
             <div class="col-md-6 col-12 mb-3">
-              <div class="row" style="height: 100%">
-                <iframe id="SpotifyIframe" style="
-                      border-radius: 12px;
-                      width: 100%;
-                      height: 100%;
-                      border: none;
-                    " src="https://open.spotify.com/embed/show/5Y8Tb056iqr7NZxQfCk6W9?utm_source=generator&theme=0"
+              <div id="SpotifyIframe" class="row">
+                <iframe src="https://open.spotify.com/embed/show/5Y8Tb056iqr7NZxQfCk6W9?utm_source=generator&theme=0"
                   allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"></iframe>
               </div>
@@ -363,7 +358,7 @@
       <h2 class="display-4 text-center text-dark">Tratamientos</h2>
 
 
-      <div class="glass-container" id="glass" style="margin: 0 auto;">
+      <div class="glass-container" id="glass">
         <ul>
           <li>Estrés</li>
           <li>Depresión</li>
@@ -394,8 +389,7 @@
           </h2>
           <div class="col-md-6 col-sm-12 order-md-1 mb-3">
             <iframe src="https://www.youtube.com/embed/o1oGl9jEObk?si=uj4fQi4FbWk5FqKa"
-              class="img-fluid rounded shadow-sm" style="border-radius: 12px; width: 100%; height: 415px;"
-              title="YouTube video player" frameborder="0"
+              class="img-fluid rounded shadow-sm" title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
@@ -447,16 +441,14 @@
 
 
   <!-- Barra -->
-  <hr class="my-4" style="
-
-      " id="autocuidado-section" />
+  <hr class="my-4" id="autocuidado-section" />
 
   <section id="seccion-autocuidado" class="container py-5">
     <div class="row contenedor-principal shadow rounded-4 p-4 align-items-center bg-light">
       <div class="col-12 col-md-6 order-md-1 order-2">
         <div class="pe-md-4">
           <h2 class="mb-3 text-center">Auto Cuidado de Equipos</h2>
-          <p class="lead mb-3" style="text-align: justify;">
+          <p class="lead mb-3">
             Existen muchos factores en los grupos de trabajo que llevan a la búsqueda
             de instancias de autocuidado, tales como el estrés, clima laboral no
             adecuado, problemas de comunicación, complicaciones para trabajar en
@@ -470,8 +462,8 @@
         <img src="assets/img/Auto Cuidado Equipos.webp" alt="Imagen descriptiva"
           class="img-fluid imagen-seccion rounded-3 shadow-sm">
       </div>
-      <div class="col-12 order-3" style="margin-top: 16px;">
-        <p class="lead mb-3" style="line-height: 1.6; text-align:justify;">
+      <div class="col-12 order-3 parrafo2-autocuidado">
+        <p class="lead mb-3">
           Es por ello que se hace relevante generar
           espacios de autocuidado donde se puedan experimentar directamente
           métodos que ayuden al grupo de trabajo a relajarse y manejar de mejor
@@ -495,34 +487,29 @@
     <div class="container my-5" id="contact">
       <h2 class="display-4 text-center text-dark">Contacto</h2>
       <div class="form-background row">
-        <div class="col-12 col-md-3 d-flex align-items-center">
-          <img src="assets/img/logo 2.png" alt="Logo Alex Oyarzún Psicólogo" class="img-fluid"
-            style="opacity: 0.5; max-width: 100%; margin-right: 10px;" />
+        <div class="col-12 col-md-3 d-flex align-items-center logo-contacto">
+          <img src="assets/img/logo 2.png" alt="Logo Alex Oyarzún Psicólogo" class="img-fluid" />
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 label-inputs">
           <form class="text-center" id="myForm">
             <div class="mb-3">
               <label for="name" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="name" placeholder="¿Como te llamas?" required
-                style="width: 100%; max-width: 550px; margin: auto;" />
+              <input type="text" class="form-control" id="name" placeholder="¿Como te llamas?" required />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="¿Tienes un correo electrónico?"
-                style="width: 100%; max-width: 550px; margin: auto;" />
+              <input type="email" class="form-control" id="email" placeholder="¿Tienes un correo electrónico?" />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 label-fono">
               <label for="phone" class="form-label">Fono</label>
-              <input type="tel" class="form-control" id="phone" placeholder="Tu número de teléfono" required
-                style="width: 100%; max-width:550px; margin: auto;" />
+              <input type="tel" class="form-control" id="phone" placeholder="Tu número de teléfono" required />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 label-mensaje">
               <label for="message" class="form-label">Mensaje </label>
-              <textarea class="form-control" id="message" rows="3" placeholder="Ingresa tu mensaje"
-                style="width: 100%; max-width: 550px; margin: auto;" required></textarea>
+              <textarea class="form-control" id="message" rows="3" placeholder="Ingresa tu mensaje" required></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+              <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
             </div>
           </form>
         </div>
