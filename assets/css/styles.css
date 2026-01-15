@@ -1,5 +1,5 @@
 /* servicios styling */
-.service-card {
+/* .service-card {
   border: none;
   background-color: #f8f9fa;
   transition: transform 0.3s ease;
@@ -7,7 +7,7 @@
 
 .service-card:hover {
   transform: translateY(-10px);
-}
+} */
 
 /* Footer styling */
 footer {
@@ -132,7 +132,7 @@ footer a:hover {
   text-align: justify;
   text-align-last: left;
   margin-bottom: 11px;
-  word-spacing: -0.3ch;
+  /* word-spacing: -0.3ch; */
 }
 
 #img_quiensoy {
@@ -510,7 +510,7 @@ span {
 #Texto_Otros_Servicios p {
   text-align: justify;
   text-align-last: left;
-  word-spacing: -0.3ch;
+  /* word-spacing: -0.3ch; */
   font-size: larger;
 }
 
