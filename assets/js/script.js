@@ -1,128 +1,131 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("myForm");
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('myForm');
+    
+    // Remove any existing event listeners to prevent multiple bindings
+    const oldForm = form.cloneNode(true);
+    form.parentNode.replaceChild(oldForm, form);
+    
+    oldForm.addEventListener('submit', function(event) {
+        // Prevent the default form submission and stop propagation
+        event.preventDefault();
+        event.stopPropagation();
+        
+        // Disable the submit button immediately to prevent multiple clicks
+        const submitButton = this.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando...';
 
-  // Remove any existing event listeners to prevent multiple bindings
-  const oldForm = form.cloneNode(true);
-  form.parentNode.replaceChild(oldForm, form);
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-  oldForm.addEventListener("submit", function (event) {
-    // Prevent the default form submission and stop propagation
-    event.preventDefault();
-    event.stopPropagation();
-
-    // Disable the submit button immediately to prevent multiple clicks
-    const submitButton = this.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.textContent = "Enviando...";
-
-    // Get form values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    // Basic form validation
-    if (!name || !email || !phone || !message) {
-      showMessage("Por favor complete todos los campos", "error");
-      resetSubmitButton(submitButton);
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      showMessage("Por favor ingrese un correo electrónico válido", "error");
-      resetSubmitButton(submitButton);
-      return;
-    }
-
-    // AWS SNS message sending
-    const params = {
-      Message:
-        `Nuevo mensaje de contacto:\n\n` +
-        `Nombre: ${name}\n` +
-        `Email: ${email}\n` +
-        `Teléfono: ${phone}\n` +
-        `Mensaje: ${message}`,
-      TopicArn:
-        "arn:aws:sns:us-east-1:183295419448:ContactForm-Psicologo-Alex-Oyarzun",
-    };
-
-    // Initialize AWS credentials
-    AWS.config.region = "us-east-1";
-    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-      IdentityPoolId: "us-east-1:2778c396-48cc-48d6-b58b-5f66f0f23e90",
-    });
-
-    // Create SNS service object
-    const sns = new AWS.SNS();
-
-    // Flag to track submission status
-    let isSubmitting = false;
-
-    // Publish message to SNS
-    if (!isSubmitting) {
-      isSubmitting = true;
-      sns.publish(params, function (err, data) {
-        // Reset submission flag
-        isSubmitting = false;
-
-        if (err) {
-          console.error("Error enviando mensaje:", err);
-          showMessage(
-            "Hubo un error al enviar el mensaje. Inténtelo de nuevo.",
-            "error"
-          );
-          resetSubmitButton(submitButton);
-        } else {
-          showMessage("¡Mensaje enviado exitosamente!", "success");
-          oldForm.reset(); // Clear form fields
-          resetSubmitButton(submitButton);
+        // Basic form validation
+        if (!name || !email || !phone || !message) {
+            showMessage('Por favor complete todos los campos', 'error');
+            resetSubmitButton(submitButton);
+            return;
         }
-      });
-    }
-  });
 
-  // Function to show messages
-  function showMessage(message, type) {
-    // Remove any existing alerts
-    const existingAlerts = document.querySelectorAll(".alert");
-    existingAlerts.forEach((alert) => alert.remove());
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Por favor ingrese un correo electrónico válido', 'error');
+            resetSubmitButton(submitButton);
+            return;
+        }
 
-    // Create new alert
-    const alertDiv = document.createElement("div");
-    alertDiv.className = `alert alert-${
-      type === "error" ? "danger" : "success"
-    } mt-3`;
-    alertDiv.textContent = message;
+        // AWS SNS message sending
+        const params = {
+            Message: `Nuevo mensaje de contacto:\n\n` +
+                     `Nombre: ${name}\n` +
+                     `Email: ${email}\n` +
+                     `Teléfono: ${phone}\n` +
+                     `Mensaje: ${message}`,
+            TopicArn: "arn:aws:sns:us-east-1:183295419448:ContactForm-Psicologo-Alex-Oyarzun"
+        };
 
-    // Insert alert before the form
-    oldForm.insertAdjacentElement("beforebegin", alertDiv);
-  }
+        // Initialize AWS credentials
+        AWS.config.region = 'us-east-1';
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            IdentityPoolId: 'us-east-1:2778c396-48cc-48d6-b58b-5f66f0f23e90'
+        });
 
-  // Function to reset submit button
-  function resetSubmitButton(button) {
-    button.disabled = false;
-    button.textContent = "Enviar";
-  }
+        // Create SNS service object
+        const sns = new AWS.SNS();
 
-  const whatsappBtn = document.getElementById("whatsapp-btn");
-  const sections = document.querySelectorAll(".section");
+        // Flag to track submission status
+        let isSubmitting = false;
 
-  const observerOptions = {
-    root: null,
-    threshold: 0.5,
-  };
+        // Publish message to SNS
+        if (!isSubmitting) {
+            isSubmitting = true;
+            sns.publish(params, function(err, data) {
+                // Reset submission flag
+                isSubmitting = false;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        whatsappBtn.classList.add("active");
-      } else {
-        whatsappBtn.classList.remove("active");
-      }
+                if (err) {
+                    console.error('Error enviando mensaje:', err);
+                    showMessage('Hubo un error al enviar el mensaje. Inténtelo de nuevo.', 'error');
+                    resetSubmitButton(submitButton);
+                } else {
+                    showMessage('¡Mensaje enviado exitosamente!', 'success');
+                    oldForm.reset(); // Clear form fields
+                    resetSubmitButton(submitButton);
+                }
+            });
+        }
     });
-  }, observerOptions);
 
-  sections.forEach((section) => observer.observe(section));
+    // Function to show messages
+    function showMessage(message, type) {
+        // Remove any existing alerts
+        const existingAlerts = document.querySelectorAll('.alert');
+        existingAlerts.forEach(alert => alert.remove());
+
+        // Create new alert
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type === 'error' ? 'danger' : 'success'} mt-3`;
+        alertDiv.textContent = message;
+
+        // Insert alert before the form
+        oldForm.insertAdjacentElement('beforebegin', alertDiv);
+    }
+
+    // Function to reset submit button
+    function resetSubmitButton(button) {
+        button.disabled = false;
+        button.textContent = 'Enviar';
+    }
+});
+
+// script recaptcha
+document.addEventListener('DOMContentLoaded', function() {
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LePX6IqAAAAANDZx5nVYZ3QQ_ILsbnk6F1xgld0', {action: 'submit'}).then(function(token) {
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let recaptchaResponse = document.querySelector('#g-recaptcha-response').value = token;
+
+        fetch('https://www.google.com/recaptcha/api/siteverify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: `secret=6LePX6IqAAAAAIDbBBP6plfeEahLByiaWxUz8mse&response=${recaptchaResponse}`
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Verificación exitosa');
+            
+          } else {
+            alert('Verificación fallida');
+          }
+        })
+        .catch(error => console.error('Error:', error));
+      });
+    });
+  });
 });
