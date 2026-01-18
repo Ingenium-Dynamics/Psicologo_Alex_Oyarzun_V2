@@ -92,6 +92,11 @@ img {
   align-items: center;
 }
 
+.navbar-brand img {
+  max-height: 30px;
+  width: auto;
+}
+
 .brand-text {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   -webkit-background-clip: text;
