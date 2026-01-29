@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explora temas de interés sobre salud mental y bienestar emocional con el Psicólogo Alex Oyarzún." />
+    <meta name="description" content="Explora temas de interés sobre salud mental, bienestar emocional, meditación y psicoterapia con el Psicólogo Alex Oyarzún. Videos educativos, podcast y contenido en Instagram." />
+    <meta name="keywords" content="salud mental Osorno, bienestar emocional, meditaciones activas, heridas infancia, podcast psicología, contenido psicológico" />
     <link rel="canonical" href="https://www.psicologoalexoyarzun.com/temas-interes.html" />
     
-    <title>Temas de Interés - Psicólogo Alex Oyarzún</title>
+    <!-- Schema Markup: BreadcrumbList -->
+    <!-- AI-FIRST: Navigation structure para crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://psicologoalexoyarzun.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Temas de Interés",
+          "item": "https://psicologoalexoyarzun.com/temas-interes.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Schema Markup: VideoObject Collection -->
+    <!-- AI-FIRST: Identifica contenido multimedia para rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Temas de Interés - Contenido sobre Salud Mental",
+      "description": "Colección de videos educativos, podcast y contenido sobre salud mental, meditación y bienestar emocional",
+      "provider": {
+        "@type": "Person",
+        "name": "Alex Oyarzún Trujillo",
+        "jobTitle": "Psicólogo Clínico"
+      }
+    }
+    </script>
+    
+    <title>Temas de Interés sobre Salud Mental | Psicólogo Alex Oyarzún</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,17 +158,23 @@
         </div>
     </nav>
 
-    <main class="pt-32 pb-20">
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Content -->
+    <!-- AI-FIRST: Main element marca el contenido principal de la página -->
+    <main class="pt-32 pb-20" id="main-content" role="main">
+        <!-- AI-FIRST: Section semántica para contenido multimedia educativo -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="page-heading">
             <div class="text-center mb-16">
-                 <span class="text-primary font-bold tracking-wider uppercase text-sm">Contenido</span>
-                 <h1 class="mt-2 text-4xl lg:text-5xl font-heading font-bold text-secondary mb-4">Temas de Interés</h1>
-                 <p class="text-lg text-gray-600">Explora contenido sobre salud mental y bienestar.</p>
+                 <span class="text-primary font-bold tracking-wider uppercase text-sm">Contenido Educativo</span>
+                 <!-- AI-FIRST: H1 único describe el propósito principal de la página -->
+                 <h1 id="page-heading" class="mt-2 text-4xl lg:text-5xl font-heading font-bold text-secondary mb-4">Temas de Interés sobre Salud Mental</h1>
+                 <!-- AI-FIRST: BLUF - Descripción concisa del contenido -->
+                 <p class="text-lg text-gray-600">Explora videos educativos, podcast y contenido en redes sociales sobre meditación, heridas emocionales, autocuidado y bienestar psicológico.</p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Video Menu -->
-                <div class="bg-white rounded-2xl shadow-sm p-4 h-fit">
+                <!-- AI-FIRST: Aside para contenido complementario de navegación -->
+                <aside class="bg-white rounded-2xl shadow-sm p-4 h-fit" aria-label="Lista de videos disponibles">
                     <h3 class="text-lg font-bold text-gray-900 mb-4 px-4">Videos Recientes</h3>
                     <div class="space-y-1">
                         <button class="video-btn w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 hover:text-primary transition-all duration-300 flex items-center gap-3 active group" data-video-src="https://www.instagram.com/p/CyUTSyEOJ1t/embed">
@@ -160,32 +206,35 @@
                             <span class="font-medium">¿Qué es la espiritualidad?</span>
                         </button>
                     </div>
-                </div>
+                </aside>
 
                 <!-- Video Player -->
-                <div class="lg:col-span-2">
+                <!-- AI-FIRST: Figure element para contenido multimedia con significado semántico -->
+                <figure class="lg:col-span-2" aria-label="Reproductor de video educativo">
                     <div id="videoContainer" class="bg-white rounded-2xl shadow-xl overflow-hidden aspect-[9/16] max-h-[700px] border-4 border-white">
                         <iframe class="w-full h-full" src="https://www.instagram.com/p/CyUTSyEOJ1t/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                     </div>
-                </div>
+                </figure>
             </div>
 
             <!-- Social & Podcast -->
             <div class="mt-20 grid md:grid-cols-2 gap-8">
                 <!-- Instagram Embed -->
-                <div class="bg-white p-2 rounded-3xl shadow-lg">
+                <!-- AI-FIRST: Article para contenido social media embebido -->
+                <article class="bg-white p-2 rounded-3xl shadow-lg" aria-label="Perfil de Instagram">
                     <iframe src="https://www.instagram.com/alexoyarzunt/embed" class="w-full h-[500px] rounded-2xl border-none"></iframe>
-                </div>
+                </article>
 
                 <!-- Spotify Podcast -->
-                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl shadow-lg border border-green-100 flex flex-col justify-center">
+                <!-- AI-FIRST: Article para contenido de podcast -->
+                <article class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl shadow-lg border border-green-100 flex flex-col justify-center" aria-label="Podcast en Spotify">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="bi bi-spotify text-3xl text-[#1DB954]"></i>
                         <h3 class="text-2xl font-bold text-gray-900 font-heading">Podcast</h3>
                     </div>
                     <p class="text-gray-600 mb-6">Escucha contenido sobre salud mental y bienestar emocional directamente desde Spotify.</p>
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/5Y8Tb056iqr7NZxQfCk6W9?utm_source=generator&theme=0" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
+                </article>
             </div>
 
         </section>

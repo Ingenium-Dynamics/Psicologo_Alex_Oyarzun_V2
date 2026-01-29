@@ -8,19 +8,33 @@
     <link rel="canonical" href="https://www.psicologoalexoyarzun.com" />
     <meta name="msvalidate.01" content="94CF09090D458227C2FA2A7E0CC6F21B" />
     
-    <!-- Schema Markup -->
+    <!-- Schema Markup: Organization & LocalBusiness -->
+    <!-- AI-FIRST: Establece identidad corporativa para Google Knowledge Graph y AI Overviews -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": ["LocalBusiness", "ProfessionalService", "MedicalBusiness"],
+      "@id": "https://psicologoalexoyarzun.com/#organization",
       "name": "Psicólogo Alex Oyarzún",
-      "image": "https://psicologoalexoyarzuncom/assets/img/logoAO.png",
+      "alternateName": "Alex Oyarzún - Psicólogo Clínico Osorno",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://psicologoalexoyarzun.com/assets/img/logoAO.png",
+        "width": 512,
+        "height": 512
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://psicologoalexoyarzun.com/assets/img/logo.png"
+      },
       "url": "https://psicologoalexoyarzun.com",
       "telephone": "+56994791916",
       "email": "alexoyarzuntrujillo@gmail.com",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Osorno",
+        "addressRegion": "Los Lagos",
         "addressCountry": "CL"
       },
       "geo": {
@@ -28,13 +42,26 @@
         "latitude": -40.591083,
         "longitude": -73.105413
       },
-      "description": "Psicólogo clínico especializado en terapias para estrés, depresión, ansiedad, crisis de pánico, duelos, heridas de la infancia y problemas de autoestima. Ofrecemos terapia presencial y en línea.",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": -40.591083,
+          "longitude": -73.105413
+        },
+        "geoRadius": "100000"
+      },
+      "description": "Psicólogo clínico con más de 15 años de experiencia en Osorno, Chile. Especializado en terapia humanista transpersonal para el tratamiento de estrés, depresión, ansiedad, crisis de pánico, duelos, heridas de la infancia y problemas de autoestima. Atención presencial y terapia online.",
       "knowsAbout": [
         "Psicoterapia Humanista Transpersonal",
-        "Meditaciones Activas",
+        "Meditaciones Activas OSHO",
         "Sonoterapia con Cuencos Tibetanos",
         "Terapia de Heridas de la Infancia",
-        "Autocuidado para Equipos"
+        "Autocuidado para Equipos de Trabajo",
+        "Terapia para Estrés y Ansiedad",
+        "Tratamiento de Depresión",
+        "Crisis de Pánico",
+        "Proceso de Duelo"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -44,37 +71,173 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Terapia Individual"
+              "name": "Terapia Individual",
+              "description": "Acompañamiento personalizado para superar desafíos emocionales con enfoque humanista transpersonal."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Meditaciones Activas"
+              "name": "Meditaciones Activas",
+              "description": "Técnicas de meditación que incluyen expresión corporal y catarsis para alcanzar el silencio interior."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service", 
-              "name": "Sonoterapia con Cuencos Tibetanos"
+              "name": "Sonoterapia con Cuencos Tibetanos",
+              "description": "Vibraciones sanadoras con cuencos tibetanos para reducir el estrés y promover la relajación profunda."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Autocuidado para Equipos"
+              "name": "Autocuidado para Equipos",
+              "description": "Programas de bienestar emocional para empresas que mejoran el clima laboral y previenen el burnout."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Terapia de Heridas de la Infancia",
+              "description": "Trabajo terapéutico profundo para sanar el dolor emocional reprimido desde la niñez."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Terapia Online",
+              "description": "Sesiones terapéuticas por videollamada con la misma calidad profesional que la atención presencial."
             }
           }
         ]
       },
       "founder": {
         "@type": "Person",
+        "@id": "https://psicologoalexoyarzun.com/#founder",
         "name": "Alex Oyarzún Trujillo",
+        "givenName": "Alex",
+        "familyName": "Oyarzún Trujillo",
         "jobTitle": "Psicólogo Clínico",
-        "alumniOf": "Universidad San Sebastián"
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Universidad San Sebastián",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CL"
+          }
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Psicólogo Clínico"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "Psicoterapeuta Humanista Transpersonal"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "Facilitador de Meditaciones Activas"
+          }
+        ],
+        "knowsAbout": [
+          "Psicoterapia Humanista Transpersonal",
+          "Meditaciones Activas",
+          "Sonoterapia"
+        ],
+        "worksFor": {
+          "@id": "https://psicologoalexoyarzun.com/#organization"
+        }
+      },
+      "sameAs": [
+        "https://www.instagram.com/alexoyarzunt/",
+        "https://open.spotify.com/show/5Y8Tb056iqr7NZxQfCk6W9"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    }
+    </script>
+
+    <!-- Schema Markup: FAQPage for AI Overviews -->
+    <!-- AI-FIRST: Crítico para aparecer en Google AI Overview y respuestas destacadas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es la psicoterapia humanista transpersonal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La psicoterapia humanista transpersonal es un enfoque terapéutico que integra la dimensión espiritual del ser humano con el trabajo emocional y psicológico. Se centra en el crecimiento personal, la autoconciencia y la sanación de heridas emocionales profundas, reconociendo que somos más que nuestros pensamientos y emociones. Este enfoque utiliza técnicas como meditaciones activas, trabajo corporal y exploración de patrones inconscientes para facilitar la transformación y el autoconocimiento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo debo buscar ayuda psicológica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es recomendable buscar ayuda psicológica cuando experimentas malestar emocional persistente que afecta tu calidad de vida, como ansiedad, depresión, estrés crónico, problemas de autoestima, dificultades en relaciones interpersonales, o cuando enfrentas procesos de duelo, separaciones o crisis existenciales. No es necesario esperar a estar en crisis: la terapia también es valiosa para el crecimiento personal y el autoconocimiento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funcionan las meditaciones activas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las meditaciones activas son técnicas desarrolladas por OSHO que, a diferencia de la meditación tradicional silenciosa, incluyen etapas de movimiento, expresión, catarsis y respiración antes de llegar al silencio. Están diseñadas para liberar tensiones acumuladas en el cuerpo y la mente, permitiendo una relajación profunda y genuina. Son especialmente útiles para personas que encuentran difícil aquietar la mente directamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La terapia online es tan efectiva como la presencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, la terapia online ha demostrado ser igual de efectiva que la presencial para la mayoría de las problemáticas psicológicas. Ofrece la misma calidad de atención profesional, confidencialidad y espacio terapéutico, con la ventaja adicional de mayor flexibilidad horaria y accesibilidad geográfica. La efectividad depende principalmente de la conexión terapéutica y el compromiso del paciente, no del formato de la sesión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué son las heridas de la infancia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las heridas de la infancia son experiencias emocionales dolorosas vividas en los primeros años de vida que no fueron procesadas adecuadamente y permanecen activas en el inconsciente. Incluyen experiencias de rechazo, abandono, humillación, traición o injusticia. Estas heridas influyen en nuestros patrones de comportamiento, relaciones y autoestima en la vida adulta. La terapia permite reconocerlas, sanarlas y liberarse de su influencia limitante."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema Markup: Speakable for Voice Assistants -->
+    <!-- AI-FIRST: Identifica secciones aptas para lectura por asistentes de voz (Google Assistant, Alexa) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Psicólogo Alex Oyarzún - Terapia Psicológica Premium en Osorno",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["#hero-intro", "#about-intro", "#services-intro"]
       }
     }
     </script>
@@ -159,6 +322,36 @@
         .bg-gradient-primary {
             background: linear-gradient(135deg, #27b266 0%, #197681 100%);
         }
+        
+        /* Hero Section Animations */
+        @keyframes gradient-shift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 4s ease infinite;
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out;
+        }
     </style>
     
     <!-- ReCaptcha & Scripts -->
@@ -225,63 +418,94 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-background-light">
-        <!-- Background Decor -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+    <!-- AI-FIRST: Uso de <section> con id semántico para facilitar navegación y extracción por IA -->
+    <section id="inicio" class="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden" aria-label="Sección principal de bienvenida">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Hero Background Image -->
+            <img 
+                src="assets/img/hero-section.webp" 
+                alt="Terapia psicológica profesional" 
+                class="w-full h-full object-cover object-center"
+                loading="eager"
+            >
+            <!-- Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70"></div>
+            <!-- Additional Dark Overlay for Mobile -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-secondary/40 lg:hidden"></div>
+        </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-                <!-- Text Content -->
-                <div class="lg:pr-8 text-center lg:text-left animate-fade-in-up">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-6">
-                        <span class="block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        <span class="text-sm font-medium text-gray-600">Psicólogo Clínico Certificado</span>
-                    </div>
-                    <h1 class="font-heading text-5xl lg:text-6xl font-bold leading-tight mb-6 text-secondary">
-                        Encuentra el <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">equilibrio</span> que buscas
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                        Más de 15 años acompañando procesos de sanación emocional con enfoque humanista transpersonal. 
-                        Terapia presencial en Osorno y atención online.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#contacto" class="px-8 py-4 bg-primary text-white rounded-full font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
-                            <span>Agendar Cita</span>
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                        </a>
-                        <a href="#quien-soy" class="px-8 py-4 bg-white text-secondary border-2 border-secondary/10 rounded-full font-semibold hover:border-secondary hover:bg-secondary hover:text-white transition-all duration-300">
-                            Conocer más
-                        </a>
-                    </div>
-                    
-                    <!-- Stats -->
-                    <!-- Stats -->
-                    <div class="mt-12 flex justify-center lg:justify-start gap-8 border-t border-gray-200/60 pt-8 max-w-sm mx-auto lg:mx-0">
-                        <div>
-                            <p class="text-3xl font-bold text-primary font-heading">15+</p>
-                            <p class="text-sm text-gray-500 uppercase tracking-wide">Años Exp.</p>
-                        </div>
-                    </div>
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl z-[1]"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl z-[1]"></div>
+
+        <!-- Content Container -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 shadow-lg">
+                    <span class="block w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-lg shadow-primary/50"></span>
+                    <span class="text-sm font-semibold text-white tracking-wide">Psicólogo Clínico Certificado · 15+ Años de Experiencia</span>
                 </div>
 
-                <!-- Hero Image -->
-                <div class="relative lg:h-auto flex flex-col items-center justify-center">
-                    <div class="relative rounded-full overflow-hidden shadow-2xl border-4 border-white bg-white/80 backdrop-blur-sm p-12">
-                        <img src="assets/img/logo.png" alt="Logo Alex Oyarzún" class="w-96 h-auto mx-auto object-contain">
+                <!-- Main Heading -->
+                <!-- AI-FIRST: H1 único por página, define tema central para crawlers -->
+                <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 text-white drop-shadow-2xl">
+                    Encuentra el <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-accent animate-gradient">equilibrio</span> que buscas
+                </h1>
+
+                <!-- Subtitle -->
+                <!-- AI-FIRST: Respuesta BLUF (Bottom Line Up Front) - Respuesta directa en primeras 50 palabras para featured snippets -->
+                <p id="hero-intro" class="text-xl lg:text-2xl text-white/95 mb-10 leading-relaxed max-w-3xl mx-auto font-light drop-shadow-lg">
+                    Más de 15 años acompañando procesos de <strong class="font-semibold text-primary-light">sanación emocional</strong> con enfoque humanista transpersonal. 
+                    <span class="block mt-2">Terapia presencial en Osorno y atención online.</span>
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                    <a href="#contacto" class="group px-10 py-5 bg-primary text-white rounded-full font-bold text-lg shadow-2xl shadow-primary/40 hover:shadow-primary/60 hover:bg-primary-light hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                        <span>Agendar Cita Ahora</span>
+                        <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                    <a href="#quien-soy" class="px-10 py-5 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-full font-bold text-lg hover:bg-white hover:text-secondary hover:border-white transition-all duration-300 shadow-lg">
+                        Conocer Más
+                    </a>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="inline-flex flex-wrap items-center justify-center gap-8 lg:gap-12 px-8 py-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
+                    <div class="text-center">
+                        <p class="text-4xl lg:text-5xl font-bold text-white font-heading mb-1">15+</p>
+                        <p class="text-sm lg:text-base text-white/80 font-medium uppercase tracking-wider">Años de Experiencia</p>
                     </div>
-                    <div class="mt-8 text-center bg-white/90 backdrop-blur px-8 py-4 rounded-2xl shadow-lg border border-gray-100">
-                        <span class="block text-4xl md:text-6xl font-heading font-bold text-secondary">Psicólogo Alex Oyarzún</span>
+                    <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+                    <div class="text-center">
+                        <p class="text-4xl lg:text-5xl font-bold text-white font-heading mb-1">100%</p>
+                        <p class="text-sm lg:text-base text-white/80 font-medium uppercase tracking-wider">Confidencial</p>
                     </div>
-                    <!-- Decorative Elements -->
-                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-xl z-[-1]"></div>
+                    <div class="hidden sm:block w-px h-12 bg-white/30"></div>
+                    <div class="text-center">
+                        <p class="text-4xl lg:text-5xl font-bold text-white font-heading mb-1">Online</p>
+                        <p class="text-sm lg:text-base text-white/80 font-medium uppercase tracking-wider">y Presencial</p>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden lg:block">
+            <a href="#quien-soy" class="flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors group">
+                <span class="text-sm font-medium">Desliza para conocer más</span>
+                <svg class="w-6 h-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="quien-soy" class="py-24 bg-white relative overflow-hidden">
+    <!-- AI-FIRST: Section semántica con artículo interno para señales E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) -->
+    <section id="quien-soy" class="py-24 bg-white relative overflow-hidden" aria-labelledby="about-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Image -->
@@ -293,19 +517,22 @@
                 </div>
 
                 <!-- Content -->
-                <div class="order-1 lg:order-2">
+                <!-- AI-FIRST: Article para contenido de autor - mejora E-E-A-T signals -->
+                <article class="order-1 lg:order-2">
                     <span class="text-primary font-bold tracking-wider uppercase text-sm">Sobre Mí</span>
-                    <h2 class="mt-2 text-4xl font-heading font-bold text-gray-900 mb-6">Un enfoque integral para la sanación del ser</h2>
+                    <!-- AI-FIRST: H2 como pregunta directa para optimización AEO -->
+                    <h2 id="about-heading" class="mt-2 text-4xl font-heading font-bold text-gray-900 mb-6">¿Quién es Alex Oyarzún?</h2>
                     
-                    <div class="space-y-6 text-gray-600 leading-relaxed">
+                    <!-- AI-FIRST: Respuesta BLUF para featured snippets - información de contacto y credenciales primero -->
+                    <div id="about-intro" class="space-y-6 text-gray-600 leading-relaxed">
+                        <!-- E-E-A-T: Biografía del autor con credenciales -->
                         <p>
-                            Mi nombre es <strong class="text-secondary">Alex Oyarzún Trujillo</strong>, psicólogo clínico en Osorno, Chile. 
-                            Nací y crecí en esta ciudad, donde inicié un profundo camino de autoconocimiento.
+                            Soy <strong class="text-secondary">Alex Oyarzún Trujillo</strong>, psicólogo clínico certificado con más de 15 años de experiencia en Osorno, Chile. 
+                            Egresado de la Universidad San Sebastián, he dedicado mi carrera profesional a acompañar procesos de transformación emocional y sanación profunda.
                         </p>
                         <p>
-                            Me formé como facilitador de <strong class="text-primary">meditaciones activas</strong> y como 
-                            <strong class="text-primary">Psicoterapeuta Humanista Transpersonal</strong>. Mi misión es acompañarte 
-                            en procesos de transformación emocional, sanando heridas de la infancia y potenciando tu crecimiento.
+                            Mi formación especializada incluye certificación como <strong class="text-primary">Psicoterapeuta Humanista Transpersonal</strong> y 
+                            <strong class="text-primary">Facilitador de Meditaciones Activas OSHO</strong>. Integro estas técnicas terapéuticas para ofrecer un enfoque holístico que aborda tanto la mente como el cuerpo y el espíritu, ayudándote a sanar heridas de la infancia y alcanzar tu máximo potencial.
                         </p>
                     </div>
 
@@ -323,74 +550,78 @@
                             <span class="text-gray-700">Espacio seguro y confidencial</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="servicios" class="py-24 bg-background-light">
+    <!-- AI-FIRST: Section con heading estructurado como pregunta para AEO -->
+    <section id="servicios" class="py-24 bg-background-light" aria-labelledby="services-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold tracking-wider uppercase text-sm">Servicios</span>
-                <h2 class="mt-2 text-4xl font-heading font-bold text-gray-900">¿Cómo puedo ayudarte?</h2>
-                <p class="mt-4 text-gray-600">Terapias diseñadas para adaptarse a tus necesidades y momento vital.</p>
+                <!-- AI-FIRST: H2 como pregunta directa que los usuarios buscan en Google -->
+                <h2 id="services-heading" class="mt-2 text-4xl font-heading font-bold text-gray-900">¿Qué servicios ofrece el Psicólogo Alex Oyarzún?</h2>
+                <!-- AI-FIRST: Respuesta BLUF concisa para featured snippets -->
+                <p id="services-intro" class="mt-4 text-gray-600">Ofrezco terapia individual, meditaciones activas, sonoterapia con cuencos tibetanos, programas de autocuidado para equipos, tratamiento de heridas de infancia y terapia online. Todas las terapias están diseñadas con enfoque humanista transpersonal para adaptarse a tus necesidades específicas.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
+                <!-- AI-FIRST: Article para cada servicio - mejora semántica y extracción de contenido -->
+                <article class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                         ⚛️
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Terapia Individual</h3>
                     <p class="text-gray-600">Acompañamiento personalizado para superar desafíos emocionales con enfoque humanista.</p>
-                </div>
+                </article>
 
                 <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
+                <article class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                         🧘
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Meditaciones Activas</h3>
                     <p class="text-gray-600">Técnicas que incluyen expresión y catarsis para alcanzar el silencio interior.</p>
-                </div>
+                </article>
 
                 <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
+                <article class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                         🔔
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Sonoterapia</h3>
                     <p class="text-gray-600">Vibraciones sanadoras con cuencos tibetanos para reducir el estrés.</p>
-                </div>
+                </article>
 
                 <!-- Card 4 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
+                <article class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                         👥
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Autocuidado Equipos</h3>
                     <p class="text-gray-600">Programas de bienestar para empresas que mejoran el clima laboral.</p>
-                </div>
+                </article>
 
                 <!-- Card 5 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
+                <article class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                         🩹
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Heridas de Infancia</h3>
                     <p class="text-gray-600">Trabajo profundo para sanar el dolor reprimido del pasado.</p>
-                </div>
+                </article>
 
                 <!-- Card 6 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
+                <article class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-primary/20 group">
                     <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                         💻
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-heading">Terapia Online</h3>
                     <p class="text-gray-600">Sesiones por videollamada con la misma calidad que la presencial.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
